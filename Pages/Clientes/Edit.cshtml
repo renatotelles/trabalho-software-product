@@ -1,0 +1,51 @@
+@page
+@model Vendas.Pages_Clientes.EditModel
+
+@{
+    ViewData["Title"] = "Alterar";
+}
+
+
+<h4>Alterar Cadastro de Cliente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Cliente.Id" />
+            <div class="form-group">
+                <label asp-for="Cliente.Nome" class="control-label"></label>
+                <input asp-for="Cliente.Nome" class="form-control" />
+                <span asp-validation-for="Cliente.Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cliente.Endereco" class="control-label"></label>
+                <input asp-for="Cliente.Endereco" class="form-control" />
+                <span asp-validation-for="Cliente.Endereco" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cliente.Cidade" class="control-label"></label>
+                <input asp-for="Cliente.Cidade" class="form-control" />
+                <span asp-validation-for="Cliente.Cidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cliente.Uf" class="control-label">Estado</label>
+                <input asp-for="Cliente.Uf" class="form-control" />
+                <span asp-validation-for="Cliente.Uf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cliente.DataCriacao" class="control-label">Data Criação </label>
+                <input asp-for="Cliente.DataCriacao" class="form-control" />
+                <span asp-validation-for="Cliente.DataCriacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Voltar</a>
+</div>
+

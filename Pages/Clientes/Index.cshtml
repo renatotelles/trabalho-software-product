@@ -1,0 +1,60 @@
+@page
+@model Vendas.Pages_Clientes.IndexModel
+
+@{
+    ViewData["Title"] = "Clientes";
+}
+
+<h1>Clientes</h1>
+
+<p>
+    <a asp-page="Create">Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente[0].Nome)
+            </th>
+            <th>
+                Endereço
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente[0].Cidade)
+            </th>
+            <th>
+                Estado
+            </th>
+            <th>
+                Data Criação
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Cliente) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Endereco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Uf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataCriacao)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Alterar</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Consulta</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Apagar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
