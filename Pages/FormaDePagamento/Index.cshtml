@@ -1,0 +1,54 @@
+﻿@page
+@model Vendas.Pages_FormaDePagamento.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Forma de Pagamentos</h1>
+
+<p>
+    <a asp-page="Create">Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FormaDePagamento[0].Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FormaDePagamento[0].Prazo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FormaDePagamento[0].Taxa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FormaDePagamento[0].DataCriacao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.FormaDePagamento) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prazo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Taxa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataCriacao)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Alterar</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Consultar</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Apagar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -11,6 +11,7 @@ namespace Vendas.Data
         //public DbSet<Pessoa> Pessoas{ get; set; }
 
         public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<FormaDePagamento> FormaDePagamentos { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
@@ -27,6 +28,12 @@ namespace Vendas.Data
             modelBuilder.ApplyConfiguration(new ClienteMap());
 
         }
+
+        public DbSet<Vendas.Models.Cliente> Cliente { get; set; } = default!;
+
+        public DbSet<Vendas.Models.Produto> Produto { get; set; } = default!;
+
+        public DbSet<Vendas.Models.FormaDePagamento> FormaDePagamento { get; set; } = default!;
 
     }
 }

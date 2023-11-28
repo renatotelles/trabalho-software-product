@@ -1,0 +1,42 @@
+﻿@page
+@model Vendas.Pages_FormaDePagamento.DetailsModel
+
+@{
+    ViewData["Title"] = "Consulta";
+}
+
+
+<div>
+    <h4>Consulta de Forma de Pagamento</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FormaDePagamento.Nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FormaDePagamento.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FormaDePagamento.Prazo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FormaDePagamento.Prazo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FormaDePagamento.Taxa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FormaDePagamento.Taxa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FormaDePagamento.DataCriacao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FormaDePagamento.DataCriacao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.FormaDePagamento?.Id">Alterar</a> |
+    <a asp-page="./Index">Voltar</a>
+</div>
